@@ -1,0 +1,108 @@
+{{extend './layouts/home.html'}}
+{{block 'title'}}{{'首页'}}{{/block}}
+
+{{block 'content'}}
+	<div class="wrapper">
+	 <!-- 右边主页面部分 -->
+	  <div class="content-wrapper" >
+	    <section class="content-header">
+	      <h1>
+	        首页
+	      </h1>
+	    </section>
+	
+	    <!-- 右边内容 -->
+	    <section class="content container-fluid">
+	    	<!--三盒子-->
+			<div class="row">
+	      <div class="col-md-1"></div>
+	       <!--第一个小盒子-->
+	        <div class="col-lg-3 col-xs-6">
+	          <div class="small-box bg-aqua">
+	            <div class="inner">
+	              <p >电动车总数</p>
+	              <h4 >￥126,560</h4>
+	            </div>
+	            <a href="#" class="small-box-footer">电动车说明 <i class="fa fa-arrow-circle-right"></i></a>
+	          </div>
+	        </div>
+	    	<!--第二个小盒子-->
+	        <div class="col-lg-3 col-xs-6">
+	          <div class="small-box bg-green">
+	            <div class="inner">
+	              <p>出车总数</p>
+	              <h4>8,846</h4>
+	            </div>
+	            <a href="#" class="small-box-footer">电动车说明 <i class="fa fa-arrow-circle-right"></i></a>
+	          </div>
+	        </div>
+	        <!--第三个小盒子-->
+	        <div class="col-lg-3 col-xs-6">
+	          <!-- small box -->
+	          <div class="small-box bg-yellow">
+	            <div class="inner">
+	              <p>监控车辆</p>
+	
+	              <h4>6,560</h4>
+	            </div>
+	            <a href="#" class="small-box-footer">电动车说明 <i class="fa fa-arrow-circle-right"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      	<!--表部分-->
+	      	<div class="row">
+				<div class="col-md-1"></div>
+	      		<div class="col-md-10">
+					<table class="table table-striped table-hover">
+					<tbody id="tBody">
+						<tr class="info">
+							<th scope="col">公司</th>
+							<th scope="col">车辆总数</th>
+							<th scope="col">监控车辆</th>
+							<th scope="col">监控车辆占比</th>
+							<th scope="col">出车总数</th>
+							<th scope="col">出车总数占比</th>
+						</tr>
+						{{each statistics}}
+							<tr>
+								<td>{{ $value.company }}</td>
+								<td>{{ $value.carSum }}</td>
+								<td>{{ $value.moniterCar}}</td>
+								<td>{{ $value.proportionM}}</td>
+								<td>{{ $value.outCars}}</td>
+								<td>{{ $value.proportionO}}</td>
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+	     		</div>
+	      	</div>
+	    </section>
+	    
+	  </div>
+	  <!--页脚 -->
+	  <footer class="main-footer" style="text-align: center">
+	    <a href="#">帮助&nbsp;</a><a href="#">隐私&nbsp;</a><a href="#">条款</a>
+	    Copyright &copy; 2018 <a href="#">公交云体验技术部出品</a>
+	  </footer>
+	  <div class="control-sidebar-bg"></div>
+	</div>
+{{/block}}
+
+{{block 'script'}}
+	<script>
+		var tbody=document.getElementById('tBody')
+		var trObj=tbody.children//获取tr
+		var sum1=0,sum2=0,sum3=0
+		for ( var i=1;i<trObj.length;i++){
+			sum1+=parseInt(trObj[i].children[1].innerHTML)//车辆总数之和
+			sum2+=parseInt(trObj[i].children[2].innerHTML)//监控车辆总数之和
+			sum3+=parseInt(trObj[i].children[4].innerHTML)//出车车辆总数之和
+		}
+		var inner=document.getElementsByClassName('inner')
+		inner[0].children[1].innerHTML=sum1
+		inner[1].children[1].innerHTML=sum2
+		inner[2].children[1].innerHTML=sum3
+	</script>
+{{/block}}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{block 'title'}}{{/block}}</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/AdminLTE.css"/>
+  <link rel="stylesheet" href="/public/css/skin-blue.min.css"/>
+  <link rel="stylesheet" href="/public/css/style.css"/>
+  <link rel="stylesheet" href="/public/css/laydate.css"/>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" id="change">
+	<div class="wrapper">
+			<!-- 顶部导航栏 -->
+		<header class="main-header">
+		 <!--点击可跳转至首页-->
+		  <a href="/" class="logo">
+		    <span class="logo-lg"><span class="fa fa-car text-gray"></span>&nbsp;电量监控</span>
+		  </a>
+		  <!--顶部导航栏-->
+		  <nav class="navbar navbar-static-top" role="navigation">
+		    <!--点击三横LOGO可伸缩导航栏部分-->
+		    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+		      <span class="sr-only"></span>
+		    </a>
+		    <div class="navbar-custom-menu">
+		      <ul class="nav navbar-nav">
+		        <!--用户菜单栏-->
+		        <li class="dropdown user user-menu">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		            <span class="hidden-xs"><i class="fa fa-user-circle text-black"></i>&nbsp;{{ user.username }}</span>
+		          </a>
+		          <ul class="dropdown-menu">
+		            <!-- User image -->
+		            <li class="user-header">  
+		             	<i class="fa fa-user-circle fa-use fa-3x"></i>    
+		              <p>
+		              {{ user.username }}
+		                <small style="font-family:Cambria">Member since {{ user.created_time }}</small>
+		              </p>
+		            </li>
+		            <!-- Menu Body -->
+		            <li class="user-body">
+		              <div class="row">
+		                <div class="col-xs-8 text-center">
+		                  <span>所属公司:&nbsp;{{user.company}}</span>
+		                </div>
+		                <div class="col-xs-4 text-center">
+		                  <a href="/cars/userEdit">设置</a>
+		                </div>
+		              </div>
+		            </li>
+		            <li class="user-footer">
+		              <div class="pull-left">
+		                <a href="/cars/login" class="btn btn-default btn-flat">登录</a>
+		              </div>
+		              <div class="pull-right">
+		                <a href="/logout" class="btn btn-default btn-flat">退出登录</a>
+		              </div
+		            </li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div>
+		  </nav>
+		</header>
+		<!-- 左边导航栏 -->
+		<aside class="main-sidebar">
+		  <section class="sidebar">
+		    <ul class="sidebar-menu" data-widget="tree">
+		      <li class="treeview active ">
+		        <a href="#"><i class="fa fa-lightbulb-o fa-lg text-aqua"></i> <span >电量监控</span>
+		          <span class="pull-right-container">
+		              <i class="fa fa-angle-left pull-right"></i>
+		            </span>
+		        </a>
+		        <ul class="treeview-menu">
+		          <li class="list-item"><a href="/cars/low"><i class="fa fa-circle-thin text-purple"></i>低电量车</a></li>
+		          <li class="list-item"><a href="/cars/low"><i class="fa fa-circle-thin text-olive"></i>子目录2</a></li>
+		        </ul>
+		      </li>
+		      <li class="treeview ">
+		        <a href="#"><i class="fa fa-map-marker fa-lg text-green"></i><span>地图分布</span>
+		          <span class="pull-right-container">
+		              <i class="fa fa-angle-left pull-right"></i>
+		            </span>
+		        </a>
+		        <ul class="treeview-menu">
+		          <li class="list-item"><a href="/cars/map"><i class="fa fa-circle-thin text-fuchsia"></i>今日里程</a></li>
+		          <li class="list-item"><a href="/cars/map"><i class="fa fa-circle-thin text-orange"></i>子目录</a></li>
+		        </ul>
+		      </li>
+		      <li class="treeview active">
+		       <a href="#"><i class="fa fa-bell-o text-warning"></i> <span>车辆监控</span>
+		          <span class="pull-right-container">
+		              <i class="fa fa-angle-left pull-right"></i>
+		            </span>
+		        </a>
+		        <ul class="treeview-menu">
+		          <li class="list-item"><a href="/cars/details"><i class="fa fa-circle-thin text-light-blue"></i>车辆列表</a></li>
+		          <li class="list-item"><a href="/cars/details"><i class="fa fa-circle-thin text-yellow"></i>子目录2</a></li>
+		        </ul>
+		      </li>
+		      <li class="treeview ">
+		        <a href="#"><i class="fa fa-pie-chart text-blue"></i> <span>统计分析</span>
+		          <span class="pull-right-container">
+		              <i class="fa fa-angle-left pull-right"></i>
+		            </span>
+		        </a>
+		        <ul class="treeview-menu">
+		          <li class="list-item"><a href="/cars/download"><i class="fa fa-circle-thin text-success"></i>报表下载</a></li>
+		          <li class="list-item"><a href="/cars/download"><i class="fa fa-circle-thin text-maroon"></i>子目录</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		  </section>
+		</aside>
+		{{block 'content'}}{{/block}}
+	</div>
+	<script type="text/javascript" src="/public/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/public/js/adminlte.min.js"></script>
+	<script type="text/javascript" src="/public/js/laydate.js"></script>
+	{{block 'script'}}{{/block}}
+</body>
+
+</html>

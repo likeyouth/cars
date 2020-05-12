@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	font-family: "微软雅黑";
+}
+
+.inner p{
+	font-size: 12px;
+}
+.inner h4{
+	font-size:20px;
+}
+.user-menu .hidden-xs{
+	font-size: 16px;
+}
+.table{
+	background-color:teal;
+}
+.btn-group{
+	margin-bottom: 20px;
+}
+.table{
+		table-layout: fixed;
+	}
+.btn-group button{
+	color:black;
+}
+.btn-toolbar{
+	margin-left: 310px;
+}
+.table a{
+	color:darkblue;
+}
+#btns{
+	margin-top:15px;
+	margin-bottom: 20px;
+}
+#btns .btn1,.btn2{
+	display: inline-block;
+}
+#btns .btn1{
+	margin-left: 20px;
+}
+#btns .btn2{
+	margin-left: 730px;
+}
+#three{
+	border-bottom: #79A9B8 solid 1px;
+	line-height: 30px;
+	margin-bottom: 15px;
+}
+.apart{
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+#middle{
+	margin-bottom: 15px;
+}
+.content-header small{
+	font-size: 16px;
+	color:#B9BBBF;
+}

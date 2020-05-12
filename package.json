@@ -1,0 +1,23 @@
+{
+  "name": "cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "body-parser": "^1.19.0",
+    "excel-export": "^0.5.1",
+    "express": "^4.17.0",
+    "express-art-template": "^1.0.1",
+    "express-session": "^1.16.1",
+    "mongoose": "^5.5.10",
+    "node-xlsx": "^0.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
